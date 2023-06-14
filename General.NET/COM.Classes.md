@@ -1,3 +1,7 @@
+[Index](../index.md) | [General .NET](../General.NET.md)
+
+---
+
 # COM Classes in .NET
 - Assembly must be COM visible
 - Each class and interface must have a `GuidAttribute` with a unique GUID value
