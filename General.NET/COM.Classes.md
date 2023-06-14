@@ -18,6 +18,7 @@
   - Structures
 - Nested classes are allowed and named with a "+" (plus) as concatenation
 - It seems, no inheritance of classes possible? or from public classes only?
+- Classes, members that can't/shouldn't be exposed to COM must be marked with a [ComVisibleAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.comvisibleattribute) of value [`false`](https://learn.microsoft.com/en-us/dotnet/api/system.boolean)
 
 - COM libraries without registration and without strong names are usable in/with manifests
 
