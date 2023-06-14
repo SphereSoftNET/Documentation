@@ -4,7 +4,7 @@
 
 # COM Classes in .NET
 - Assembly must be COM visible
-- Each class and interface must have a [`GuidAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.guidattribute) with a unique [GUID](https://learn.microsoft.com/de-de/dotnet/api/system.guid) value
+- Each exposed class and interface must have a [`GuidAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.guidattribute) with a unique [GUID](https://learn.microsoft.com/de-de/dotnet/api/system.guid) value
 - Optionally use of [`ProgIdAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.progidattribute)
 - Class must have a parameterless constructor
 - It seems, that the first impleted interface will be taken for COM?
