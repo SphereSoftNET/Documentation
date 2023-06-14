@@ -1,4 +1,4 @@
-[Index](../index.md) | [General .NET](../General.NET.md)
+| [Index](../index.md) | [General .NET](../General.NET.md) |
 
 ---
 
