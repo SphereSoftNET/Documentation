@@ -15,7 +15,7 @@
 - Parameters of kind "ByRef" ([`ref`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ref), [`out`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/out)) must be implemented of COM type [`Variant`](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/variant-data-type) ([`Object`](https://learn.microsoft.com/en-us/dotnet/api/system.object))
 - Parameters must have an equivalent in COM (for [`Variant`](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/variant-data-type)); known types without equivalent are
   - [`Byte`](https://learn.microsoft.com/en-us/dotnet/api/system.byte) and
-  - Structures
+  - [Structures](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct)
 - Nested classes are allowed and named with a "+" (plus) as concatenation
 - It seems, no inheritance of classes possible? or from public classes only?
 - Classes, members that can't/shouldn't be exposed to COM must be marked with a [ComVisibleAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.comvisibleattribute) of value [`false`](https://learn.microsoft.com/en-us/dotnet/api/system.boolean)
