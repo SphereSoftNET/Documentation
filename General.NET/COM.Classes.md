@@ -34,7 +34,7 @@
 - Nested classes are allowed and named with a "+" (plus) as concatenation
 - It seems, no inheritance of classes possible? or from public classes only?
 - Classes, members that can't/shouldn't be exposed to COM must be marked with a
-  [ComVisibleAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.comvisibleattribute)
+  [`ComVisibleAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.comvisibleattribute)
   of value [`false`](https://learn.microsoft.com/en-us/dotnet/api/system.boolean)
 - [`For Each`](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/for-eachnext-statement)
   enumerable support for COM needs direct [`IEnumerator`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerator)
