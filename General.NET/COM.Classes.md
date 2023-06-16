@@ -1,6 +1,10 @@
 | [Index](../index.md) | [General .NET](../General.NET.md) |
 
----
+<hr style="height: 1px" />
+
+[[_TOC_]]
+
+<hr style="height: 1px" />
 
 # COM Classes in .NET
 
@@ -50,3 +54,6 @@
 - `CreateObject(...)` ([VBA](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/createobject-function),
   [VBScript](https://learn.microsoft.com/en-us/previous-versions//xzysf6hc(v=vs.85))) error will occur when
   - Exception occured in constructor
+
+<hr style="height: 1px" />
+<a href="http://spheresoft.net" style="font-size: 0.7em; float: right">spheresoft.net</a>
