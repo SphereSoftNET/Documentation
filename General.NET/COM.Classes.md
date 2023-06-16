@@ -2,11 +2,13 @@
 
 <hr style="height: 1px" />
 
-[[_TOC_]]
+<!-- TOC (needs ID linkage in headers!) -->
+- [COM Classes in .NET](#com-classes-in-net)
+  - [Errors](#errors)
 
 <hr style="height: 1px" />
 
-# COM Classes in .NET
+# [COM Classes in .NET](#)
 
 - Assembly must be COM visible
 - Each exposed class, interface and enumeration must have a [`GuidAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.guidattribute)
@@ -46,7 +48,7 @@
 - COM libraries without registration and without strong names are usable in/with manifests
   (use tool [`MT`](https://learn.microsoft.com/en-us/windows/win32/sbscs/mt-exe) for that)
 
-## Errors
+## [Errors](#)
 
 - Manifest Side by side errors occurs when
   - Manifest file has false structure or values
@@ -55,5 +57,6 @@
   [VBScript](https://learn.microsoft.com/en-us/previous-versions//xzysf6hc(v=vs.85))) error will occur when
   - Exception occured in constructor
 
+<!-- FOOTER -->
 <hr style="height: 1px" />
 <a href="http://spheresoft.net" style="font-size: 0.7em; float: right">spheresoft.net</a>
