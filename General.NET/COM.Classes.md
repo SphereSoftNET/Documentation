@@ -41,7 +41,8 @@
   `GetEnumerator()` method implementation, could be done with [`IEnumerable`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable)
   interface with precidence over [`IEnumerable<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1)
   (type library exporter give them the [`DispId`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dispidattribute)
-  of -4 / 0xFFFC for a [NewEnum implementation](https://learn.microsoft.com/de-de/office/vba/language/concepts/getting-started/using-for-eachnext-statements))
+  of [-4 / 0xFFFFFFFC](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/automat/dispid-constants)
+  for a [_NewEnum implementation](https://learn.microsoft.com/de-de/office/vba/language/concepts/getting-started/using-for-eachnext-statements))
 - Returning array with values needs to be of element type [`Object`](https://learn.microsoft.com/en-us/dotnet/api/system.object),
   so `Linq` `Cast<Object>().ToArray()` would help here
 
