@@ -27,10 +27,13 @@
   [`out`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/out))
   must be implemented of COM type [`Variant`](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/variant-data-type)
   ([`Object`](https://learn.microsoft.com/en-us/dotnet/api/system.object))
-- Parameters must have an equivalent in COM (for [`Variant`](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/variant-data-type));
-  known types without equivalent are
+- Parameters must have an equivalent in COM (for [`VARIANT`](https://learn.microsoft.com/en-us/windows/win32/api/oaidl/ns-oaidl-variant) structure);
+  known types without equivalent in [VBScript](https://learn.microsoft.com/en-us/previous-versions//xzysf6hc(v=vs.85)) are
   - [`Byte`](https://learn.microsoft.com/en-us/dotnet/api/system.byte) and
   - [Structures](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct)
+- Parameters for object instances, stored in a variable before method calls, should have COM type
+  [`Variant`](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/variant-data-type)
+  ([`Object`](https://learn.microsoft.com/en-us/dotnet/api/system.object))
 - Nested classes are allowed and named with a "+" (plus) as concatenation
 - It seems, no inheritance of classes possible? or from public classes only?
 - Classes, members that can't/shouldn't be exposed to COM must be marked with a
