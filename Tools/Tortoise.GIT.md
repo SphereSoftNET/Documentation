@@ -29,7 +29,7 @@ rem Reduce base file name to name first (remove extension)
 set _WINMERGE_FILE_NAME=%~n2
 
 rem Reduce base file name to base name second (remove merge name)
-for %%i in (%_WINMERGE_FILE_NAME%) do set _WINMERGE_FILE_NAME=%%~ni
+for %%i in ("%_WINMERGE_FILE_NAME%") do set _WINMERGE_FILE_NAME=%%~ni
 
 start "" "%_WINMERGE_FULL_PATH%" /maximize /ub /fm /wl /wr /dl "%~5" /dm "%~6 (%_WINMERGE_FILE_NAME%)" /dr "%~7" /am "%~1" "%~2" "%~3" /o "%~4"
 
