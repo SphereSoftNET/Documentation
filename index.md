@@ -1,5 +1,6 @@
 # SphereSoft.NET Documentations
-[General .NET](General.NET.md)
+[General .NET](General.NET.md)  
+[Tools](Tools.md)
 
 <!-- FOOTER -->
 <hr style="height: 1px" />
