@@ -22,27 +22,28 @@ The content of your batch file can be like this:
 
 if "%7"=="" goto M_SYNTAX
 
-set _WINMERGE_FULL_PATH=C:\Program Files (x86)\WinMerge\WinMergeU.exe
+rem Uncomment the related line when auto detection off WinMerge not works
 rem set _WINMERGE_FULL_PATH=C:\Program Files\WinMerge\WinMergeU.exe
+rem set _WINMERGE_FULL_PATH=C:\Program Files\WinMerge\WinMerge.exe
+rem set _WINMERGE_FULL_PATH=C:\Program Files (x86)\WinMerge\WinMergeU.exe
+rem set _WINMERGE_FULL_PATH=C:\Program Files (x86)\WinMerge\WinMerge.exe
 
-rem Reduce base file name to name first (remove extension)
-set _WINMERGE_FILE_NAME=%~n2
+rem Auto detect WinMerge executable first 32bit and then 64bit
+if exist "%ProgramFiles(x86)%\WinMerge\WinMerge*.exe" for /F "delims=" %%F in ('dir "%ProgramFiles(x86)%\WinMerge\WinMerge*.exe" /B /O') do set _WINMERGE_FULL_PATH=%ProgramFiles(x86)%\WinMerge\%%F
+if exist "%ProgramFiles%\WinMerge\WinMerge*.exe" for /F "delims=" %%F in ('dir "%ProgramFiles%\WinMerge\WinMerge*.exe" /B /O') do set _WINMERGE_FULL_PATH=%ProgramFiles%\WinMerge\%%F
 
-rem Reduce base file name to base name second (remove merge name)
-for %%i in ("%_WINMERGE_FILE_NAME%") do set _WINMERGE_FILE_NAME=%%~ni
-
-start "" "%_WINMERGE_FULL_PATH%" /maximize /ub /fm /wl /wr /dl "%~5" /dm "%~6 (%_WINMERGE_FILE_NAME%)" /dr "%~7" /am "%~1" "%~2" "%~3" /o "%~4"
+start "" "%_WINMERGE_FULL_PATH%" /maximize /ub /fm /wl /wr /dl "%~5" /dm "%~6 (%~nx4)" /dr "%~7" /am "%~1" "%~2" "%~3" /o "%~4"
 
 goto M_END
 
 :M_SYNTAX
 echo Tortoise GIT configuration:
-echo "%~0" %%theirs %%base %%mine %%merged %%tname %%bname %%yname
+echo "%~f0" %%theirs %%base %%mine %%merged %%tname %%bname %%yname
 echo.
 pause
 echo.
 
-:END
+:M_END
 ```
 
 
