@@ -52,6 +52,8 @@
 - COM libraries without registration and without strong names are usable in/with manifests
   (use tool [`MT`](https://learn.microsoft.com/en-us/windows/win32/sbscs/mt-exe) for that)
 
+
+
 ## [Errors](#)
 
 - Manifest Side by side errors occurs when
@@ -61,6 +63,9 @@
   [VBScript](https://learn.microsoft.com/en-us/previous-versions//xzysf6hc(v=vs.85))) error will occur when
   - Exception occured in constructor
 
+
+
 <!-- FOOTER -->
 <hr style="height: 1px" />
+<span style="font-size: 0.7em">© SphereSoft.NET, Holger Boskugel, Berlin, Germany</span>
 <a href="http://spheresoft.net" style="font-size: 0.7em; float: right">spheresoft.net</a>

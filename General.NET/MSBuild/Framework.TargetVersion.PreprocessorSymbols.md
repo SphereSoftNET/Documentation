@@ -107,4 +107,6 @@ https://learn.microsoft.com/en-us/dotnet/standard/frameworks#preprocessor-symbol
 
 <!-- FOOTER -->
 <hr style="height: 1px" />
+<span style="font-size: 0.7em">© SphereSoft.NET, Holger Boskugel, Berlin, Germany</span>
 <a href="http://spheresoft.net" style="font-size: 0.7em; float: right">spheresoft.net</a>
+
