@@ -1,25 +1,3 @@
-| [Index](../index.md) | [Tools](../Tools.md) |
-
-<hr style="height: 1px" />
-
-# Tortoise GIT
-
-
-
-## With WinMerge
-When using `WinMerge` in merge mode of `Tortoise GIT` you might be missing an
-information about the current file you working on. For this you can create a
-batch file and then start `WinMerge` with your informations.
-
-The following batch file adds the name of the underlaying file for the merge in
-the header of the middle pane. The call for such batch file you have to place
-in the settings of `Tortoise GIT` for the `Merge Tool` as follows:
-```
-"<PathToYourBatchFile>\<YourBatchFileName>.bat" %theirs %base %mine %merged %tname %bname %yname
-```
-
-The content of your batch file can be like this:
-```batch
 @echo off
 
 rem <summary>
@@ -28,6 +6,7 @@ rem <summary>
 rem <revisionHistory>
 rem   <revision version="2023.06.23" date="2023-06-23" author="Holger Boskugel, github.com/SphereSoftNET">Initial implementation</revision>
 rem </revisionHistory>
+
 
 if "%7"=="" goto M_SYNTAX
 
@@ -53,13 +32,3 @@ pause
 echo.
 
 :M_END
-```
-
-File can be downloaded [here](Tortoise.GIT.WinMerge.bat).
-
-
-
-<!-- FOOTER -->
-<hr style="height: 1px" />
-<span style="font-size: 0.7em">© SphereSoft.NET, Holger Boskugel, Berlin, Germany</span>
-<a href="http://spheresoft.net" style="font-size: 0.7em; float: right">spheresoft.net</a>
