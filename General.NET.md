@@ -3,7 +3,7 @@
 <hr style="height: 1px" />
 
 # General Documentation for .NET
-[Design of COM classes](General.NET/COM.Classes.md)
+[Design of COM classes](General.NET/COM.Classes.md)  
 [MS Build](General.NET/MSBuild.md)
 
 <!-- FOOTER -->
