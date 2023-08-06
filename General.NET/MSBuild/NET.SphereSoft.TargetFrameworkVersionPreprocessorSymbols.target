@@ -1,0 +1,44 @@
+<!--
+  <summary>
+  Enables Framework.NET version based preprocesssor symbols
+  </summary>
+  <remarks>
+    Place this file in your project (f.i. in "Properties" folder) and add an
+    related "Import" XML element to your project file (see also copy comment
+	this file below).
+  </remarks>
+  <revisionHistory>
+    <revision version="2023.08.04" date="2023-08-04" author="Holger Boskugel, github.com/SphereSoftNET">Initial implementation</revision>
+  </revisionHistory>
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="SSN_TargetFrameworkVersionPreprocessorSymbol" BeforeTargets="BeforeBuild">
+    <PropertyGroup>
+      <!-- See also https://learn.microsoft.com/en-us/dotnet/standard/frameworks#preprocessor-symbols -->
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v4.8'">NET48</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v4.7.1'">NET471</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v4.7'">NET47</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v4.6.2'">NET462</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v4.6.1'">NET461</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v4.6'">NET46</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v4.5.2'">NET452</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v4.5.1'">NET451</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v4.5'">NET45</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v4.0'">NET40</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v3.5'">NET35</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v3.0'">NET30</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v2.0'">NET20</TargetFrameworkVersionPreprocessorSymbol>
+      <TargetFrameworkVersionPreprocessorSymbol Condition="$(TargetFrameworkVersion) == 'v1.1'">NET11</TargetFrameworkVersionPreprocessorSymbol>
+    </PropertyGroup>
+    <Message Condition="$(TargetFrameworkVersionPreprocessorSymbol) != ''" Text="Add of preproccessor symbols 'NETFRAMEWORK' and '$(TargetFrameworkVersionPreprocessorSymbol)' for target Framework.NET version $(TargetFrameworkVersion) ..." Importance="high"/>
+    <Message Condition="$(TargetFrameworkVersionPreprocessorSymbol) != ''" Text="DefineConstants before: $(DefineConstants)" Importance="high"/>
+    <PropertyGroup>
+      <DefineConstants Condition="$(TargetFrameworkVersionPreprocessorSymbol) != ''">$(DefineConstants);NETFRAMEWORK;$(TargetFrameworkVersionPreprocessorSymbol)</DefineConstants>
+    </PropertyGroup>
+    <Message Condition="$(TargetFrameworkVersionPreprocessorSymbol) != ''" Text="DefineConstants after:  $(DefineConstants)" Importance="high"/>
+    <!-- <Message Text="VSToolsPath:  $(VSToolsPath)" Importance="high"/> --> 
+  </Target>
+</Project>
+<!--
+  <Import Project="Properties\NET.SphereSoft.TargetFrameworkVersionPreprocessorSymbols.target" Condition="Exists('Properties\NET.SphereSoft.TargetFrameworkVersionPreprocessorSymbols.target')" />
+-->

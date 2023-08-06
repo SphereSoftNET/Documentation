@@ -2,7 +2,7 @@
 
 <hr style="height: 1px" />
 
-<!-- TOC (needs ID linkage in headers!) -->
+<!-- TOC (needs manual creation and ID linkage in headers!) -->
 - [COM Classes in .NET](#com-classes-in-net)
   - [Errors](#errors)
 
