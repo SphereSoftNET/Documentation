@@ -1,0 +1,51 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Windows Docker Image/Container based CI
+
+
+# Controls when the workflow will run
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: windows-2019
+    # container: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2019
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Copy environment for Docker
+        shell: cmd
+        run: |
+             set GITHUB_ > %TEMP%\env.list.txt
+             set RUNNER_ >> %TEMP%\env.list.txt
+             type %TEMP%\env.list.txt
+
+      - name: Run at docker
+        shell: cmd
+        run: >-
+             docker
+             run
+             -i
+             --rm
+             --env-file %TEMP%\env.list.txt
+             -v C:\TEMP:C:\TEMP
+             -v D:\:C:\TEMP\_DriveD
+             mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2019
+             cmd /S /C subst D: C:\TEMP\_DriveD &&
+             cmd /S /C dir D:\ &&
+             powershell -Command "Write-Output ""GITHUB_REF=$Env:GITHUB_REF`nGITHUB_REF_NAME=$Env:GITHUB_REF_NAME`nGITHUB_WORKSPACE=$Env:GITHUB_WORKSPACE`nRUNNER_WORKSPACE=$Env:RUNNER_WORKSPACE"""
