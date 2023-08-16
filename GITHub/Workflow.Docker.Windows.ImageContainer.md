@@ -13,7 +13,8 @@
 
 Using a Windows Docker Image/Container at GITHub workflow actions is not direct
 supported. But GITHub runners have a Docker installation, so Windows Docker Images
-can be used and managed.
+can be used and managed. One disadvantage this has - acting on Docker needs mostly
+between 15 to more than 30 minutes, so have patience.
 
 To use a Windows Runner you need to use the `runs-on` directive in your `job`.
 GITHub supports `windows-2019` and `windows-2022`. So you can use images based
