@@ -2,6 +2,7 @@ https://spheresoftnet.github.io/Documentation/
 https://spheresoftnet.github.io/Documentation/General.NET.html
 https://spheresoftnet.github.io/Documentation/GITHub.html
 https://spheresoftnet.github.io/Documentation/Tools.html
+https://spheresoftnet.github.io/Documentation/WPF.NET.html
 https://spheresoftnet.github.io/Documentation/General.NET/MSBuild.html
 https://spheresoftnet.github.io/Documentation/General.NET/MSBuild/Framework.TargetVersion.PreprocessorSymbols.html
 https://spheresoftnet.github.io/Documentation/General.NET/MSBuild/NET.SphereSoft.TargetFrameworkVersionPreprocessorSymbols.target
