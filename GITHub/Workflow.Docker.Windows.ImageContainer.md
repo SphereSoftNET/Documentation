@@ -5,11 +5,11 @@
 - [Description of GITHub workflow file](#description-of-the-github-workflow-file)
 - [Content of GITHub workflow file](#content-of-the-github-workflow-file)
 
-# Workflow using Windows Docker Image/Container
+## Workflow using Windows Docker Image/Container
 
 
 
-## [Description of GITHub workflow file](#)
+### [Description of GITHub workflow file](#)
 
 Using a Windows Docker Image/Container at GITHub workflow actions is not direct
 supported. But GITHub runners have a Docker installation, so Windows Docker Images
@@ -50,7 +50,7 @@ and `RUNNER_WORKSPACE`.
 
 ![Section "Run at docker more output"](Workflow.Docker.Windows.ImageContainer.Output.RunAtDocker.2.png)
 
-## [Content of GITHub workflow file](#)
+### [Content of GITHub workflow file](#)
 
 ```yaml
 # This is a basic workflow to help you get started with Actions
