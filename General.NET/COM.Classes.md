@@ -3,12 +3,12 @@
 <hr style="height: 1px" />
 
 <!-- TOC (needs manual creation and ID linkage in headers!) -->
-- [COM Classes in .NET](#com-classes-in-net)
+- [Design of COM usable classes in .NET](#design-of-com-usable-classes-in-net)
   - [Errors](#errors)
 
 <hr style="height: 1px" />
 
-## [COM Classes in .NET](#)
+## [Design of COM usable classes in .NET](#)
 
 - Assembly must be COM visible
 - Each exposed class, interface and enumeration must have a [`GuidAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.guidattribute)
