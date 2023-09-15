@@ -2,11 +2,15 @@
 
 <hr style="height: 1px" />
 
-# Tortoise GIT
+- [Tortoise GIT](#tortoise-git)
+  - [With WinMerge](#with-winmerge)
+
+## [Tortoise GIT](#)
 
 
 
-## With WinMerge
+### [With WinMerge](#)
+
 When using `WinMerge` in merge mode of `Tortoise GIT` you might be missing an
 information about the current file you working on. For this you can create a
 batch file and then start `WinMerge` with your informations.
