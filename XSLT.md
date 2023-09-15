@@ -12,13 +12,13 @@
 
 The main code is
 
-```xslt
+```xml
 <xsl:text xml:space="preserve"><![CDATA[]]></xsl:text>
 ```
 
 So you can create a `script` tag:
 
-```xslt
+```xml
 <script>
   <xsl:text xml:space="preserve"><![CDATA[]]></xsl:text>
 </script>
@@ -26,7 +26,7 @@ So you can create a `script` tag:
 
 or a `textarea` tag:
 
-```xslt
+```xml
 <textarea>
   <xsl:value-of select="ns:AnyText"/>
   <xsl:text xml:space="preserve"><![CDATA[]]></xsl:text>
