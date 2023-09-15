@@ -11,13 +11,13 @@
 
 <hr style="height: 1px" />
 
-# [Framework target version preprocessor symbols](#)
+## [Framework target version preprocessor symbols](#)
 
 This is a solution for Framework.NET target version missing Preprocessor Symbols during MS Build process.
 
 
 
-## [MS Build target](#)
+### [MS Build target](#)
 
 The setup is done with a MS Build target:
 
@@ -55,7 +55,7 @@ This target can be downloaded from [here](NET.SphereSoft.TargetFrameworkVersionP
 
 
 
-## [Integrate MS Build target in project](#)
+### [Integrate MS Build target in project](#)
 
 To integrate the target into your project build, you must place it somewhere into
 your project folder. We recommend under the sub folder `Properties`.
@@ -71,7 +71,7 @@ Then add the target with an `Import` XML element into your project file:
 
 
 
-## [Messages during build process](#)
+### [Messages during build process](#)
 
 ```
 Add of preprocessor symbols 'NETFRAMEWORK' and 'NET471' for target Framework.NET version v4.7.1 ...
@@ -81,7 +81,7 @@ DefineConstants after:  DEBUG;TRACE;NETFRAMEWORK;NET471
 
 
 
-## [Target Framework.NET versions and related Preprocessor symbols](#)
+### [Target Framework.NET versions and related Preprocessor symbols](#)
 
 This follows the `MSBuild` together with the `Project SDK`, see also:  
 https://learn.microsoft.com/en-us/dotnet/standard/frameworks#preprocessor-symbols
