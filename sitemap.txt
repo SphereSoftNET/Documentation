@@ -10,3 +10,4 @@ https://spheresoftnet.github.io/Documentation/GITHub/Workflow.Docker.Windows.Ima
 https://spheresoftnet.github.io/Documentation/GITHub/WindowsDocker.yml
 https://spheresoftnet.github.io/Documentation/Tools/Tortoise.GIT.html
 https://spheresoftnet.github.io/Documentation/Tools/Tortoise.GIT.WinMerge.bat
+https://spheresoftnet.github.io/Documentation/XSLT.html
