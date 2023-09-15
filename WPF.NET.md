@@ -10,7 +10,7 @@
 
 ## [Use property of `StaticResource` for a Binding](#)
 
-```xaml
+```xml
 <UserControl DataContext="{DynamicResource MyViewModelResource}">
   <UserControl.Resources>
     <local:MyViewModel x:Key="MyViewModelResource"/>
