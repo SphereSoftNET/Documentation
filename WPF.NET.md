@@ -16,7 +16,7 @@
     <local:MyViewModel x:Key="MyViewModelResource"/>
   </UserControl.Resources>
   
-  <Button Content="{Binding ButtonText, Source={StaticResource MyViewModelResource}}"
+  <Button Content="{Binding ButtonText, Source={StaticResource MyViewModelResource}}"/>
 </UserControl>
 ```
 
