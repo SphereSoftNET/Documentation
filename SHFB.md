@@ -12,7 +12,7 @@
 
 This output format is available only at `Build` in the `Presentation style` of `VS2013`.
 
-> :warning: - **Important hint on paths**
+> ⚠️ - **Important hint on paths**
 >
 > If the path to the working directory contains a `.h` or `.H` the compilation
 > with the HTML Help File Compiler throw warnings of not being HTML and generates
