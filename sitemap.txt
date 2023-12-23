@@ -1,6 +1,7 @@
 https://spheresoftnet.github.io/Documentation/
 https://spheresoftnet.github.io/Documentation/General.NET.html
 https://spheresoftnet.github.io/Documentation/GITHub.html
+https://spheresoftnet.github.io/Documentation/SHFB.html
 https://spheresoftnet.github.io/Documentation/Tools.html
 https://spheresoftnet.github.io/Documentation/WPF.NET.html
 https://spheresoftnet.github.io/Documentation/General.NET/MSBuild.html
