@@ -16,10 +16,10 @@
 - Optionally use of [`ProgIdAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.progidattribute)
 - Class must have a parameterless constructor
 - It seems, that the first impleted interface will be taken for COM?
-- No generic base classes or first generic interfaces allowed
+- No generic base classes or first generic interfaces (without inherited none generic interface) allowed
 - Only [`public`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/public)
   members are accessible under COM (no [`protected`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/protected) etc.)
-- Inherited interface members mit be implemented again (with [`new`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/new-modifier))
+- Inherited interface members might be implemented again (with [`new`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/new-modifier))
   at inheriting interface
 - Additional interfaces without reimplementation with [`new`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/new-modifier)
   are accessible only after specific cast (implement cast methods for that)
@@ -46,8 +46,8 @@
   (type library exporter give them the [`DispId`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dispidattribute)
   of [-4 / 0xFFFFFFFC](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/automat/dispid-constants)
   for a [_NewEnum implementation](https://learn.microsoft.com/de-de/office/vba/language/concepts/getting-started/using-for-eachnext-statements))
-- Returning array with values needs to be of element type [`Object`](https://learn.microsoft.com/en-us/dotnet/api/system.object),
-  so `Linq` `Cast<Object>().ToArray()` would help here
+- Handling arrays out and in with values needs to be of element type [`Object`](https://learn.microsoft.com/en-us/dotnet/api/system.object),
+  so `Linq` `Cast<Object>().ToArray()` would help here and for in correct cast then the incoming elements
 
 - COM libraries without registration and without strong names are usable in/with manifests
   (use tool [`MT`](https://learn.microsoft.com/en-us/windows/win32/sbscs/mt-exe) for that)
