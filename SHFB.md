@@ -15,7 +15,9 @@ This output format is available only at `Build` in the `Presentation style` of `
 > ⚠️ - **Important hint on paths**
 >
 > If the path to the working directory contains a `.h` or `.H` the compilation
-> with the HTML Help File Compiler throw warnings of not being HTML and generates
+> with the HTML Help File Compiler throw warnings of not being HTML (`HHC3004 :
+> warning : AlertCaution.png : The HTML tag ... is not a valid HTML tag (it does
+> not begin with an alphanumeric character)`) for none HTML content and generates
 > a bad `*.chm` file.
 >
 > Getting around this, choose a project path without a `.h` or `.H` *OR* set a
