@@ -12,10 +12,10 @@
 
 - Assembly must be COM visible
 - Each exposed class, interface and enumeration must have a [`GuidAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.guidattribute)
-  with a unique [GUID](https://learn.microsoft.com/de-de/dotnet/api/system.guid) value
+  with a unique [GUID](https://learn.microsoft.com/en-us/dotnet/api/system.guid) value
 - Optionally use of [`ProgIdAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.progidattribute)
 - Class must have a parameterless constructor
-- It seems, that the first impleted interface will be taken for COM?
+- It seems, that the first implemented interface will be taken for COM?
 - No generic base classes or first generic interfaces (without inherited none generic interface) allowed
 - Only [`public`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/public)
   members are accessible under COM (no [`protected`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/protected) etc.)
@@ -28,14 +28,16 @@
   must be implemented of COM type [`Variant`](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/variant-data-type)
   ([`Object`](https://learn.microsoft.com/en-us/dotnet/api/system.object))
 - Parameters must have an equivalent in COM (for [`VARIANT`](https://learn.microsoft.com/en-us/windows/win32/api/oaidl/ns-oaidl-variant) structure);
-  known types without equivalent in [VBScript](https://learn.microsoft.com/en-us/previous-versions//xzysf6hc(v=vs.85)) are
+  known types without equivalent in [VBScript](https://learn.microsoft.com/en-us/windows/win32/lwef/using-vbscript) are
   - [`Byte`](https://learn.microsoft.com/en-us/dotnet/api/system.byte) and
   - [Structures](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct)
 - Parameters for object instances, stored in a variable before method calls, should have COM type
   [`Variant`](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/variant-data-type)
   ([`Object`](https://learn.microsoft.com/en-us/dotnet/api/system.object))
 - Nested classes are allowed and named with a "+" (plus) as concatenation
-- It seems, no inheritance of classes possible? or from public classes only?
+- Use of [`public`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/public)
+  [`abstract`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/abstract)
+  classes are possible
 - Classes, members that can't/shouldn't be exposed to COM must be marked with a
   [`ComVisibleAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.comvisibleattribute)
   of value [`false`](https://learn.microsoft.com/en-us/dotnet/api/system.boolean)
@@ -43,11 +45,29 @@
   enumerable support for COM needs direct [`IEnumerator`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerator)
   `GetEnumerator()` method implementation, could be done with [`IEnumerable`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable)
   interface with precidence over [`IEnumerable<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1)
-  (type library exporter give them the [`DispId`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dispidattribute)
+  (type library exporter exports as [`IEnumVARIANT`](https://learn.microsoft.com/en-us/windows/win32/api/oaidl/nn-oaidl-ienumvariant)
+  and give them the [`DispId`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dispidattribute)
   of [-4 / 0xFFFFFFFC](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/automat/dispid-constants)
-  for a [_NewEnum implementation](https://learn.microsoft.com/de-de/office/vba/language/concepts/getting-started/using-for-eachnext-statements))
+  for a [_NewEnum implementation](https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/using-for-eachnext-statements))
 - Handling arrays out and in with values needs to be of element type [`Object`](https://learn.microsoft.com/en-us/dotnet/api/system.object),
   so `Linq` `Cast<Object>().ToArray()` would help here and for in correct cast then the incoming elements
+- Handling of optional parameters by [`params`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/params)
+  in (VB/VBA/VBScript as [`ParamArray`]()) requires an implementation as COM type [`Variant`](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/variant-data-type)
+  ([`Object`](https://learn.microsoft.com/en-us/dotnet/api/system.object)) array.
+  The framework handles this as a [SAFEARRAY](https://learn.microsoft.com/en-us/windows/win32/api/oaidl/ns-oaidl-safearray)([VARIANT](https://learn.microsoft.com/en-us/windows/win32/api/oaidl/ns-oaidl-variant)).
+  When exporting the type library (TLB) with [TlbExp](https://learn.microsoft.com/en-us/dotnet/framework/tools/tlbexp-exe-type-library-exporter)
+  it becomes a [`vararg`](https://learn.microsoft.com/en-us/windows/win32/midl/vararg) attribute there also.
+  Specific implementation and change in TLB/IDL is required for VB, while VBScript can direct use it.
+
+  - VB98/VB6 require a pointer to the SAFEARRAY(VARIANT). In that case it needs:
+    - implement the parameter as `ref Object[]`
+    - export the type library
+    - open the type library with the tool [`oleview`](https://learn.microsoft.com/en-us/windows/win32/com/ole-com-object-viewer)
+    - save the content as IDL file
+    - add the atribute `vararg` after the attribute `id`
+    - compile the IDL file with [`midl`](https://learn.microsoft.com/en-us/windows/win32/com/midl-compiler)
+      (requires the [`cl`](https://learn.microsoft.com/en-us/cpp/build/reference/compiler-options) and includes)
+  
 
 - COM libraries without registration and without strong names are usable in/with manifests
   (use tool [`MT`](https://learn.microsoft.com/en-us/windows/win32/sbscs/mt-exe) for that)
