@@ -133,7 +133,7 @@ HRESULT MyParamArrayMethod([in] SAFEARRAY(VARIANT)* values);
 public class ForEachSample :
   IEnumerable<String>
 {
-  private readonly List<String> _list = new List<String>()
+  private readonly List<String> _list = new List<String>();
 
   public ForEachSample()
   {
@@ -141,7 +141,7 @@ public class ForEachSample :
 
   public IEnumerator GetEnumerator() => ((IEnumerable<String>)this).GetEnumerator();
   
-  IEnumerator<String> IEnumerable<String>.GetEnumerator() => _list.GetEnumerator()
+  IEnumerator<String> IEnumerable<String>.GetEnumerator() => _list.GetEnumerator();
 }
 ```
 
