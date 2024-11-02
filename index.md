@@ -4,6 +4,7 @@
 [WPF (Windows Presentation Framework) .NET](WPF.NET.md)  
 [XSL(T)](XSLT.md)  
 [GITHub](GITHub.md)  
+[GITLab](GITLab.md)  
 [SHFB - Sandcastle Help File Builder](SHFB.md)  
 [Tools](Tools.md)
 
