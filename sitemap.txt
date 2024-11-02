@@ -1,6 +1,7 @@
 https://spheresoftnet.github.io/Documentation/
 https://spheresoftnet.github.io/Documentation/General.NET.html
 https://spheresoftnet.github.io/Documentation/GITHub.html
+https://spheresoftnet.github.io/Documentation/GITLab.html
 https://spheresoftnet.github.io/Documentation/SHFB.html
 https://spheresoftnet.github.io/Documentation/Tools.html
 https://spheresoftnet.github.io/Documentation/WPF.NET.html
@@ -9,6 +10,7 @@ https://spheresoftnet.github.io/Documentation/General.NET/MSBuild/Framework.Targ
 https://spheresoftnet.github.io/Documentation/General.NET/MSBuild/NET.SphereSoft.TargetFrameworkVersionPreprocessorSymbols.target
 https://spheresoftnet.github.io/Documentation/GITHub/Workflow.Docker.Windows.ImageContainer.html
 https://spheresoftnet.github.io/Documentation/GITHub/WindowsDocker.yml
+https://spheresoftnet.github.io/Documentation/GITLab/Docker.Powershell.Nanoserver.html
 https://spheresoftnet.github.io/Documentation/Tools/Tortoise.GIT.html
 https://spheresoftnet.github.io/Documentation/Tools/Tortoise.GIT.WinMerge.bat
 https://spheresoftnet.github.io/Documentation/XSLT.html

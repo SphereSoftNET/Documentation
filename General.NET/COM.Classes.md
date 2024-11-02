@@ -61,10 +61,11 @@
 
   - VB98/VB6 require a pointer to the SAFEARRAY(VARIANT). In that case it needs:
     - implement the parameter as `ref Object[]`
-    - export the type library
+    - compile your library or application
+    - export the type library with [`TlbExp`](https://learn.microsoft.com/en-us/dotnet/framework/tools/tlbexp-exe-type-library-exporter)
     - open the type library with the tool [`oleview`](https://learn.microsoft.com/en-us/windows/win32/com/ole-com-object-viewer)
     - save the content as IDL file
-    - add the atribute `vararg` after the attribute `id`
+    - add the atribute [`vararg`](https://learn.microsoft.com/en-us/windows/win32/midl/vararg) after the attribute [`id`](https://learn.microsoft.com/en-us/windows/win32/midl/id)
     - compile the IDL file with [`midl`](https://learn.microsoft.com/en-us/windows/win32/com/midl-compiler)
       (requires the [`cl`](https://learn.microsoft.com/en-us/cpp/build/reference/compiler-options) and includes)
   
@@ -74,7 +75,7 @@
 
 
 
-### [Errors](#)
+### Errors
 
 - Manifest Side by side errors occurs when
   - Manifest file has false structure or values
@@ -82,6 +83,67 @@
 - `CreateObject(...)` ([VBA](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/createobject-function),
   [VBScript](https://learn.microsoft.com/en-us/previous-versions//xzysf6hc(v=vs.85))) error will occur when
   - Exception occured in constructor
+
+
+
+### Samples for `params`
+
+#### Default implemention (accessible for `VBScript`)
+
+```cs
+MyParamArrayMethod(params Object[] values)
+```
+
+Results in VB
+
+```vb
+MyParamArrayMethod(ByVal ParamArray values() As Object)
+```
+
+Being in IDL
+
+```ìdl
+[id(1), vararg]
+HRESULT MyParamArrayMethod([in] SAFEARRAY(VARIANT) values);
+```
+
+#### Required implementation for VB98/VB6
+
+```cs
+MyParamArrayMethod(ref Object[] values)
+```
+
+Should result in VB
+
+```vb
+MyParamArrayMethod(ByVal ParamArray values() As Object)
+```
+
+Requires in IDL
+
+```ìdl
+[id(1), vararg]
+HRESULT MyParamArrayMethod([in] SAFEARRAY(VARIANT)* values);
+```
+
+
+### Sample for `For Each` enumerator with generic `IEnumerable<T>` implementation
+
+```cs
+public class ForEachSample :
+  IEnumerable<String>
+{
+  private readonly List<String> _list = new List<String>()
+
+  public ForEachSample()
+  {
+  }
+
+  public IEnumerator GetEnumerator() => ((IEnumerable<String>)this).GetEnumerator();
+  
+  IEnumerator<String> IEnumerable<String>.GetEnumerator() => _list.GetEnumerator()
+}
+```
 
 
 
