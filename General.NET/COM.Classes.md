@@ -5,6 +5,10 @@
 <!-- TOC (needs manual creation and ID linkage in headers!) -->
 - [Design of COM usable classes in .NET](#design-of-com-usable-classes-in-net)
   - [Errors](#errors)
+  - [Samples for `params`](#samples-for-params)
+    - [Default implemention (accessible for `VBScript`)](#default-implemention-accessible-for-vbscript)
+    - [Required implementation for VB98/VB6](#required-implementation-for-vb98vb6)
+  - [Sample for `For Each` enumerator with generic `IEnumerable<T>` implementation](#sample-for-for-each-enumerator-with-generic-ienumerablet-implementation)
 
 <hr style="height: 1px" />
 
