@@ -1,4 +1,4 @@
-https://spheresoftnet.github.io/Documentation/
+https://spheresoftnet.github.io/Documentation/index.html
 https://spheresoftnet.github.io/Documentation/General.NET.html
 https://spheresoftnet.github.io/Documentation/GITHub.html
 https://spheresoftnet.github.io/Documentation/GITLab.html
