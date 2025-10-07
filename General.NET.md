@@ -2,7 +2,7 @@
 
 <hr style="height: 1px" />
 
-# General Documentation for .NET
+## General Documentation for .NET
 
 [Design of COM usable classes in .NET](General.NET/COM.Classes.md)  
 [MS Build](General.NET/MSBuild.md)

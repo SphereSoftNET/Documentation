@@ -2,13 +2,13 @@
 
 <hr style="height: 1px" />
 
-# Sandcastle Help File Builder (SHFB)
+## Sandcastle Help File Builder (SHFB)
 
 - [Building `HTML Help 1 (chm)` files](#building-html-help-1-chm-files)
 
 
 
-## [Building `HTML Help 1 (chm)` files](#)
+### [Building `HTML Help 1 (chm)` files](#)
 
 This output format is available only at `Build` in the `Presentation style` of `VS2013`.
 

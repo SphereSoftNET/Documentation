@@ -13,21 +13,34 @@ indent_size = 2
 indent_style = space
 tab_width = 2
 
-# New line preferences
+# Line preferences (should not set in general, see *.tt)
 #end_of_line = crlf
 #insert_final_newline = false
+#trim_trailing_whitespace = true
 
 
 
 # Code files
-[*.{bat,cs,editorconfig,ini,md,ps1,sql,vb,yml}]
+[*.{bat,cs,editorconfig,ini,js,ps1,sln,sql,vb}]
 end_of_line = crlf
 insert_final_newline = true
+trim_trailing_whitespace = true
+
 
 
 # XML based files
-[*.{config,manifest,props,target,targets,x*}]
+[*.{config,manifest,prop,props,snippet,target,targets,vcmd,vssettings,x*}]
 insert_final_newline = false
+trim_trailing_whitespace = true
+
+
+
+# Markdown files
+# YAML can contain multi line Markdown for release description
+[*.{md,yml}]
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = false
 
 
 
@@ -35,6 +48,7 @@ insert_final_newline = false
 [*.tt]
 #end_of_line = crlf
 #insert_final_newline = true
+#trim_trailing_whitespace = false
 
 
 
@@ -220,24 +234,24 @@ dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
 
 dotnet_naming_symbols.interface.applicable_kinds = interface
 dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.interface.required_modifiers = 
+dotnet_naming_symbols.interface.required_modifiers =
 
 dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
 dotnet_naming_symbols.types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.types.required_modifiers = 
+dotnet_naming_symbols.types.required_modifiers =
 
 dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method
 dotnet_naming_symbols.non_field_members.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.non_field_members.required_modifiers = 
+dotnet_naming_symbols.non_field_members.required_modifiers =
 
 # Naming styles
 
-dotnet_naming_style.pascal_case.required_prefix = 
-dotnet_naming_style.pascal_case.required_suffix = 
-dotnet_naming_style.pascal_case.word_separator = 
+dotnet_naming_style.pascal_case.required_prefix =
+dotnet_naming_style.pascal_case.required_suffix =
+dotnet_naming_style.pascal_case.word_separator =
 dotnet_naming_style.pascal_case.capitalization = pascal_case
 
 dotnet_naming_style.begins_with_i.required_prefix = I
-dotnet_naming_style.begins_with_i.required_suffix = 
-dotnet_naming_style.begins_with_i.word_separator = 
+dotnet_naming_style.begins_with_i.required_suffix =
+dotnet_naming_style.begins_with_i.word_separator =
 dotnet_naming_style.begins_with_i.capitalization = pascal_case

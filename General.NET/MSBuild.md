@@ -2,7 +2,7 @@
 
 <hr style="height: 1px" />
 
-# MS Build
+## MS Build
 
 [Framework target version preprocessor symbols](MSBuild/Framework.TargetVersion.PreprocessorSymbols.md)
 

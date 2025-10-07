@@ -2,13 +2,13 @@
 
 <hr style="height: 1px" />
 
-# WPF (Windows Presentation Framework) .NET
+## WPF (Windows Presentation Framework) .NET
 
 - [Use property of `StaticResource` for a Binding](#use-property-of-staticresource-for-a-binding)
 
 
 
-## [Use property of `StaticResource` for a Binding](#)
+### [Use property of `StaticResource` for a Binding](#)
 
 ```xml
 <UserControl DataContext="{DynamicResource MyViewModelResource}">

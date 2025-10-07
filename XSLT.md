@@ -2,13 +2,13 @@
 
 <hr style="height: 1px" />
 
-# XSL(T) - Extensible Stylesheet Language (Transformation)
+## XSL(T) - Extensible Stylesheet Language (Transformation)
 
 - [Ensure open/close XML/(X)HTML tags](#ensure-openclose-xmlxhtml-tags)
 
 
 
-## Ensure open/close XML/(X)HTML tags
+### Ensure open/close XML/(X)HTML tags
 
 The main code is
 
