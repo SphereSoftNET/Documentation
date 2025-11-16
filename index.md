@@ -8,6 +8,8 @@
 [SHFB - Sandcastle Help File Builder](SHFB.md)  
 [Tools](Tools.md)
 
+[Games](Games.md)
+
 
 
 <!-- FOOTER -->
